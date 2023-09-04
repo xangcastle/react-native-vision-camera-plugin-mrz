@@ -1,4 +1,13 @@
 import { NativeModules, Platform } from 'react-native';
+// @ts-ignore
+import { VisionCameraProxy, Frame } from 'react-native-vision-camera';
+
+const plugin = VisionCameraProxy.getFrameProcessorPlugin('mrz');
+
+export function mrz(frame: Frame) {
+  'worklet';
+  return plugin?.call(frame);
+}
 
 const LINKING_ERROR =
   `The package 'react-native-vision-camera-plugin-mrz' doesn't seem to be linked. Make sure: \n\n` +

@@ -97,6 +97,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  api project(":react-native-vision-camera")
 }
 
 if (isNewArchitectureEnabled()) {
